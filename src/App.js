@@ -11,8 +11,7 @@ export default function App() {
 
   const runCommand = async (command) =>
     await axios.request({
-      url: `https://ps.yuuki.me/api/server/${user.server}/command?uid=18983&cmd=g+223+999999999`,
-      // params: { uid: user.uid, cmd: command },
+      url: `https://ps.yuuki.me/api/server/${user.server}/command?uid=18983&cmd=${command}`,
     });
   const addPrimogem = async () => {
     const command = ['g', '223', primogem].join('+');
@@ -28,10 +27,9 @@ export default function App() {
       />
       <Input value={user.uid} />
       <Button>Set</Button>
-
       <Avatar src={<img src={'/images/Item_Primogem.webp'} alt="avatar" />} />
       <InputNumber value={primogem} onChange={setPrimogem} />
-      <Button onClick={addPrimogem}>Add</Button>
+      <Button onClick={addPrimogem}>Add {primogem}</Button>
     </div>
   );
 }
