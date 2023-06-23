@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {
-  Button,
-  Avatar,
-  Space,
-  Select,
-  Input,
-  InputNumber,
-} from 'antd';
+import { Button, Avatar, Space, Select, Input, InputNumber } from 'antd';
 
 import './style.css';
 
@@ -35,7 +28,7 @@ export default function App() {
     return await runCommand(command);
   };
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <h1>Genshin Private Server Command Tools</h1>
       <Space>
         <Select
