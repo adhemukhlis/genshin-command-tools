@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Button, Avatar, Row, Col, Select, Input, InputNumber } from 'antd';
+import {
+  Button,
+  Avatar,
+  Space,
+  Select,
+  Input,
+  InputNumber,
+} from 'antd';
 
 import './style.css';
 
@@ -30,33 +37,21 @@ export default function App() {
   return (
     <div>
       <h1>Genshin Private Server Command Tools</h1>
-      <Row gutter={[12, 12]}>
-        <Col span={8}>
-          <Select
-            placeholder="server"
-            options={SERVER_OPTIONS}
-            value={user.server}
-            onChange={handleChangeServer}
-          />
-        </Col>
-        <Col span={8}>
-          <Input value={user.uid} onChange={handleChangeUserUID} />
-        </Col>
-        <Col span={8}>
-          <Button onClick={setUserToLocal}>Set</Button>
-        </Col>
-        <Col span={2}>
-          <Avatar
-            src={<img src={'/images/Item_Primogem.webp'} alt="avatar" />}
-          />
-        </Col>
-        <Col span={11}>
-          <InputNumber value={primogem} onChange={setPrimogem} />
-        </Col>
-        <Col span={11}>
-          <Button onClick={addPrimogem}>Add</Button>
-        </Col>
-      </Row>
+      <Space>
+        <Select
+          placeholder="server"
+          options={SERVER_OPTIONS}
+          value={user.server}
+          onChange={handleChangeServer}
+        />
+        <Input value={user.uid} onChange={handleChangeUserUID} />
+        <Button onClick={setUserToLocal}>Set</Button>
+      </Space>
+      <Space>
+        <Avatar src={<img src={'/images/Item_Primogem.webp'} alt="avatar" />} />
+        <InputNumber value={primogem} onChange={setPrimogem} />
+        <Button onClick={addPrimogem}>Add</Button>
+      </Space>
     </div>
   );
 }
