@@ -6,7 +6,7 @@ import './style.css';
 
 export default function App() {
   const [user, setUser] = useState(
-    JSON.parse(localStorage.get('user')) || { server: '', uid: undefined }
+    JSON.parse(localStorage.getItem('user')) || { server: '', uid: undefined }
   );
   const [primogem, setPrimogem] = useState(999999);
   const SERVER_OPTIONS = [{ value: 'jp1-gc1-36', label: 'Japan 3.6' }];
