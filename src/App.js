@@ -11,8 +11,8 @@ export default function App() {
 
   const runCommand = async (command) =>
     await axios.request({
-      url: `https://ps.yuuki.me/api/server/${user.server}/command`,
-      params: { uid: user.uid, cmd: command },
+      url: `https://ps.yuuki.me/api/server/${user.server}/command?uid=18983&cmd=g+223+999999999`,
+      // params: { uid: user.uid, cmd: command },
     });
   const addPrimogem = async () => {
     const command = ['g', '223', primogem].join('+');
